@@ -10,24 +10,28 @@
 
 
 ## Desired Functionality
+- [x] code formatting
+- [x] tmux-vim-navigator
+- [x] surround plugin
+- [x] autopairs plugin
+- [x] which key
+- [x] indent-blankline
+- [x] rainbow parenthesis
 - [ ] treesitter
-    - [ ] improved syntax highlighting
+    - [x] improved syntax highlighting
     - [ ] incremental selection
     - [ ] decremental selection
-- [x] code formatting
-- [ ] treesitter-context
-- [x] tmux-vim-navigator
+    - [ ] treesitter-context
 - [ ] harpoon
 - [ ] telescope
-    - [ ] search for files in filetree
-    - [ ] search keybinds
-    - [ ] grep through files in filetree
+    - [x] search for files in filetree
+    - [x] search keybinds
+    - [x] grep through files in filetree
+    - [x] diagnostics
     - [ ] git files (i.e. project files)
     - [ ] references
+    - [ ] quickfix
     - [ ] available snippets (based on filetype)
-- [ ] rainbow parenthesis
-- [ ] surround plugin
-- [ ] autopairs plugin
 - [ ] latex live preview
 - [ ] markdown live preview
 - [ ] snippets engine (LuaSnip)
@@ -47,21 +51,25 @@
     - [ ] ...
 - [ ] undo tree
 - [ ] keybind to move a split to a tab (<C-w>T)
-- [ ] function/autocommand to resume previous cursor position when opening a file
+- [ ] function/autocommand to resume previous cursor position on BufEnter
+- [ ] function/autocommand to delete all trailing whitespace before BufPreWrite
 - [ ] go to file functionality (have in this current iteration)
 - [ ] colorscheme switcher plugin
 - [ ] notetaking plugin
 - [ ] automkdir plugin
 - [ ] terminal integration
 - [ ] debugging (dap)
+    - [ ] c, python, lua, etc.
 - [ ] quickfix integration
 - [ ] test integration plugin?
 - [ ] motion plugins? (https://github.com/rockerBOO/awesome-neovim)
-- [x] which key?
 - [ ] register previewing?
-- [x] indent-blankline
 - [ ] SETTINGS
     - [x] scrolloff = 10
+    - [ ] disable swap file
+    - [ ] set undo file dir
+    - [ ] no newline comment
+
 
 ### Future Features
 - [ ] Debugging (nvim-dap)
