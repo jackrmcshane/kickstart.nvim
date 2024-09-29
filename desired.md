@@ -17,58 +17,76 @@
 - [x] which key
 - [x] indent-blankline
 - [x] rainbow parenthesis
-- [ ] treesitter
+    - [ ] keymap to toggle
+- [x] commenting (Comment.nvim)
+    - [x] not using Comment.nvim
+- [x] treesitter
     - [x] improved syntax highlighting
-    - [ ] incremental selection
-    - [ ] decremental selection
-    - [ ] treesitter-context
-- [ ] harpoon
+    - [x] incremental selection
+    - [x] decremental selection
+    - [x] treesitter-context
+- [x] LSP, Mason
+    - [x] go to file functionality (have in this current iteration)
+    - [x] c/c++
+    - [x] python
+    - [x] lua
+    - [x] bash
+    - [x] md
+    - [x] latex
 - [ ] telescope
     - [x] search for files in filetree
     - [x] search keybinds
     - [x] grep through files in filetree
     - [x] diagnostics
-    - [ ] git files (i.e. project files)
-    - [ ] references
-    - [ ] quickfix
-    - [ ] available snippets (based on filetype)
+    - [x] quickfix
+    - [ ] available snippets (based on filetype) (there is a telescope-luasnip plugin avail, but have not been able to get it working yet..)
+- [x] completion engine (nvim-cmp)
+    - [x] docs & scrolling
+- [x] snippets engine (LuaSnip)
+    - [x] useful snippets.. (c, python, md, latex)
+    - [x] use register s for impromptu snippet
+    - [ ] set up personal snippets sourcing
+- [x] quickfix integration
+- [x] function/autocommand to resume previous cursor position on BufEnter
+- [x] function/autocommand to delete all trailing whitespace before BufPreWrite
+- [x] toggle relative linenumber on focus
+- [x] keybind for global search and replace
+- [ ] move over
+    - [x] settings
+    - [x] keymaps
+    - [x] autocmds
+    - [x] commands
+    - [x] after files
+    - [x] check after files to ensure appropriate
+- [ ] harpoon
+- [ ] linting
+    - [ ] c/c++, python, lua, bash, latex, md, etc
 - [ ] latex live preview
 - [ ] markdown live preview
-- [ ] snippets engine (LuaSnip)
-    - [ ] useful snippets.. (c, python, md, latex)
 - [ ] session management
     - [ ] 1, 2, 3, 4 could be used to load particular sessions!!
-- [ ] commenting (Comment.nvim)
-- [ ] completion engine (nvim-cmp)
-    - [ ] have cmp show inverted list when it spawns above the cursor position
-- [ ] LSP, Mason
-    - [ ] c/c++, python, lua, bash, latex, md
-    - [ ] docs & scrolling
-- [ ] git integration
+- [ ] git integration -- kickstart has something good, but it was throwing errors, will have to resolve at some point
     - [ ] lazygit
     - [ ] gitsigns
         - [ ] toggle with keybind
     - [ ] ...
 - [ ] undo tree
-- [ ] keybind to move a split to a tab (<C-w>T)
-- [ ] function/autocommand to resume previous cursor position on BufEnter
-- [ ] function/autocommand to delete all trailing whitespace before BufPreWrite
-- [ ] go to file functionality (have in this current iteration)
 - [ ] colorscheme switcher plugin
 - [ ] notetaking plugin
 - [ ] automkdir plugin
 - [ ] terminal integration
 - [ ] debugging (dap)
+    - [x] installed
+    - [ ] configured
     - [ ] c, python, lua, etc.
-- [ ] quickfix integration
 - [ ] test integration plugin?
 - [ ] motion plugins? (https://github.com/rockerBOO/awesome-neovim)
 - [ ] register previewing?
 - [ ] SETTINGS
     - [x] scrolloff = 10
-    - [ ] disable swap file
-    - [ ] set undo file dir
-    - [ ] no newline comment
+    - [x] disable swap file
+    - [x] set undo file dir
+    - [x] no newline comment
 
 
 ### Future Features
