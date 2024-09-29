@@ -8,9 +8,12 @@ vim.g.have_nerd_font = true
 
 -- Make line numbers default
 vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+
+-- detect filetype for filetype based settings
+vim.o.filetype = 'on'
+
+-- Disable swap.
+vim.o.swapfile = false
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -28,9 +31,12 @@ end)
 
 -- Enable break indent
 vim.opt.breakindent = true
+-- Stops breaking in the middle of a word
+vim.opt.linebreak = true
 
 -- Save undo history
 vim.opt.undofile = true
+vim.o.undodir = os.getenv 'HOME' .. '/.local/vim/undodir'
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
@@ -64,3 +70,24 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+-- Minimal number of screen lines to keep to the right of the cursor.
+vim.opt.sidescroll = 5
+
+vim.opt.shortmess:append {
+  w = true,
+  s = true,
+  m = true,
+}
+
+-- (Some) wildmenu completion opts
+vim.o.wildignorecase = true
+vim.opt.wildignore:append {
+  '*/.git/*',
+  '*/__pycache__/*',
+  '*/build/**',
+  '*.jpg',
+  '*.jpeg',
+  '*.png',
+  '*.gif',
+  '*.svg',
+}
