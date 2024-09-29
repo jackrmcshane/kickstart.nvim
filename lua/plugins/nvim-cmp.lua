@@ -18,13 +18,65 @@ return { -- Autocompletion
         -- `friendly-snippets` contains a variety of premade snippets.
         --    See the README about individual language/framework/plugin snippets:
         --    https://github.com/rafamadriz/friendly-snippets
-        -- {
-        --   'rafamadriz/friendly-snippets',
-        --   config = function()
-        --     require('luasnip.loaders.from_vscode').lazy_load()
-        --   end,
-        -- },
+        {
+          'rafamadriz/friendly-snippets',
+          config = function()
+            require('luasnip.loaders.from_vscode').lazy_load()
+          end,
+        },
       },
+      keys = {
+        { -- text in register 's' is used as snippet boilerplate
+          -- any text of the form: $name is treated as an editible field/node in the snippet
+          '<C-r>s',
+          function()
+            require('luasnip.extras.otf').on_the_fly 's'
+          end,
+          desc = 'Insert on-the-fly snippet',
+          mode = 'i',
+        },
+      },
+      opts = function()
+        local types = require 'luasnip.util.types'
+
+        return {
+          -- Check if the current snippet was deleted.
+          delete_check_events = 'TextChanged',
+          -- Display a cursor-like placeholder in unvisited nodes
+          -- of the snippet.
+          ext_opts = {
+            [types.insertNode] = {
+              unvisited = {
+                virt_text = { { '|', 'Conceal' } },
+                virt_text_pos = 'inline',
+              },
+            },
+            [types.exitNode] = {
+              unvisited = {
+                virt_text = { { '|', 'Conceal' } },
+                virt_text_pos = 'inline',
+              },
+            },
+          },
+          snip_env = {
+            -- Helper function for showing a snippet if the Treesitter node
+            -- satisfies a given predicate.
+            ts_show = function(pred)
+              return function()
+                local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+                local ok, node = pcall(vim.treesitter.get_node, { pos = { row - 1, col - 1 } })
+
+                -- Show the snippet if Treesitter bails.
+                if not ok or not node then
+                  return true
+                end
+
+                return pred(node:type())
+              end
+            end,
+          },
+        }
+      end,
     },
     'saadparwaiz1/cmp_luasnip',
 
@@ -46,7 +98,7 @@ return { -- Autocompletion
           luasnip.lsp_expand(args.body)
         end,
       },
-      completion = { completeopt = 'menu,menuone,noinsert' },
+      completion = { completeopt = 'menu,menuone,preview,noinsert' },
 
       -- For an understanding of why these mappings were
       -- chosen, you will need to read `:help ins-completion`
