@@ -12,6 +12,12 @@ vim.opt.number = true
 -- detect filetype for filetype based settings
 vim.o.filetype = 'on'
 
+-- Use an indentation of 4 spaces.
+vim.o.shiftwidth = 2
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.expandtab = true
+
 -- Disable swap.
 vim.o.swapfile = false
 
